@@ -30,5 +30,7 @@ jobs:
         with:
           ssh_private_key: ${{ secrets.REPO_SYNC_SSH_PRI_KEY }}
           target_repo_url: git@gitlab.com:nfurobotlab/hr-test.git
+          source_branch: main
+          target_branch: main
 
      
