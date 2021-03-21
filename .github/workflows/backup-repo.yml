@@ -13,9 +13,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Push
-        uses: net-engine/github-repository-sync-action@v1.2.0
+        uses: ilkka/git-https-push-action@v1.1.0
         with:
-          ssh_private_key: ${{ secrets.REPO_SYNC_SSH_PRI_KEY }}
-          target_repo_url: git@gitlab.com:nfurobotlab/test.git
+          remoteUrl: ${{ secrets.GITLAB_URL }}
+
 
      
