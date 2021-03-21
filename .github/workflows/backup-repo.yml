@@ -28,7 +28,7 @@ jobs:
       - name: Push to GitLab
         uses: net-engine/github-repository-sync-action@v1
         with:
-          ssh-private_key: ${{ secrets.REPO_SYNC_SSH_PRI_KEY }}
+          ssh_private_key: ${{ secrets.REPO_SYNC_SSH_PRI_KEY }}
           target_repo_url: git@gitlab.com:nfurobotlab/hr-test.git
 
      
