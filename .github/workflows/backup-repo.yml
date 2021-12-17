@@ -1,0 +1,19 @@
+name: Backup repo to GitLab
+on:
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  backup-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Push
+        uses: net-engine/github-repository-sync-action@v1.2.0
+        with:
+          ssh_private_key: ${{ secrets.REPO_SYNC_SSH_PRI_KEY }}
+          target_repo_url: git@gitlab.com:nfurobotlab/test.git   
